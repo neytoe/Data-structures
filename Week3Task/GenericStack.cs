@@ -12,15 +12,25 @@ namespace Week3Task
     {
         List<T> myList = new List<T>();
 
+
+
         //MaxCapacity was created to handle stack overflow
         public int MaxCapacity = 100;
+
+
+
+        #region IsEmpty Method
         //returns true if a stack is empty
         public bool IsEmpty()
         {
             return myList.Count == 0;                
                 
         }
+        #endregion
 
+
+
+        #region Push Method
         //inserts an item at the top of the stack
         public void Push (T value)
         {
@@ -28,28 +38,34 @@ namespace Week3Task
             {
                 myList.Add(value);
             }
-
             else
             {
                 Console.WriteLine("Stack is full");
             }
-                
-            
-
         }
+        #endregion
 
+
+        #region Peek Method
         //this returns the top item in the stack
         public T Peek()
         {
             return myList[myList.Count - 1];
         }
+        #endregion
 
-        //this return the size of the stack
-       public int Size()
+
+        #region Size Method
+        //this return the count of the stack
+        public int Size()
         {
             return myList.Count;
         }
+        #endregion
 
+
+
+        #region Print Method
         //this shows all items in the stack
         public void Print()
         {
@@ -61,11 +77,15 @@ namespace Week3Task
                 Console.WriteLine($"{number}:    {item}");
             }
         }
+        #endregion
 
+
+        #region Pop Method
         //Removes item at the top of the stack
         public void Pop ()
         {
             myList.RemoveAt(myList.Count - 1);
         }
+        #endregion
     }
 }

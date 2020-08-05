@@ -16,13 +16,19 @@ namespace Week3Task
         //MaxCapacity was set to handle Queue overflow
         public int MaxCapacity = 100;
 
+
+        #region IsEmpty Method
         //returns true if a Queue is empty
         public bool IsEmpty()
         {
             return myQueue.Count == 0;
 
         }
+        #endregion
 
+
+
+        #region Enqueue Method
         //inserts an item at the end of the Queue
         public void Enqueue(T value)
         {
@@ -35,10 +41,13 @@ namespace Week3Task
             {
                 Console.WriteLine("Stack is full");
             }
-           
-
 
         }
+        #endregion
+
+
+
+        #region Peek Method
 
         //this returns the oldest item in the queue
         public T Peek()
@@ -47,12 +56,22 @@ namespace Week3Task
             throw new Exception("Queue is currently empty");
 
         }
+        #endregion
 
-        //this return the size of the stack
+
+
+
+        #region Size Method
+        //this return the count of the stack
         public int Size()
         {
             return myQueue.Count;
         }
+        #endregion
+
+
+
+        #region Print Method
 
         //this shows all items in the stack
         public void Print()
@@ -74,13 +93,17 @@ namespace Week3Task
             }
             }
         }
+        #endregion
 
+
+
+        #region Dequeue Method
 
         public void Dequeue()
         {
             myQueue.RemoveAt(0);
         }
-
+        #endregion
 
 
     }
